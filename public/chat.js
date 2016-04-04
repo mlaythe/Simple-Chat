@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	let messages = [],
+	var messages = [],
 	 		socket = io.connect('http://'+location.host),
 	 		field = document.getElementById('field'),
 	 		sendButton = document.getElementById('send'),
@@ -10,9 +10,11 @@ $(document).ready(function() {
 		if(data.message) {
 			messages.push(data);
 			var html = '';
+			var d = new Date();
+			var timeSubmitted = ` ${d.getMonth()}-${d.getDay()} ${d.getHours()}:${d.getMinutes()} pst`;
 			for(var i=0; i<messages.length; i++) {
 				html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>';
-				html += messages[i].message + '<br />';
+				html += messages[i].message  + '<div style="font-size:80%; float:right;">' + timeSubmitted + '</div>\n' + '<br />';
 			}
 			content.innerHTML = html;
 		} else {
