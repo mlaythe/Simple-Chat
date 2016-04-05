@@ -1,15 +1,17 @@
 doctype html
 html
 	head
-		title= 'Real time web chat'
+		title= 'Chatster'
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+		style
+			include ../style.css
+			include ../node_modules/bootstrap/dist/css/bootstrap.css
 		script(src='/chat.js')
 		script(src='/socket.io/socket.io.js')
-	body
-		#content(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
-		.controls
-			| Name: 
-			input#name(style='width:350px;')
-			br
-			input#field(style='width:350px;')
-			input#send(type='button', value='send')
+	body(class='container')
+		div#title(class='row') Chatster
+		#content(class='form-control')
+		.controls(class='form-inline')
+			div(class='form-group')
+				input#field(class='form-control')
+			input#send(type='button', value='Send', class='btn btn-primary')
