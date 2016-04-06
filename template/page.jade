@@ -7,11 +7,17 @@ html
 			include ../style.css
 			include ../node_modules/bootstrap/dist/css/bootstrap.css
 		script(src='/chat.js')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css') 
 		script(src='/socket.io/socket.io.js')
 	body(class='container')
 		div#title(class='row') Chatster
-		#content(class='form-control')
-		.controls(class='form-inline')
+		div(class='row')
+			#content(class='form-control col-sm-8 col-md-8 col-lg-9')
+			div(class='text-center col-sm-4 col-md-4 col-lg-3')
+				#user-list(class='text-center') Who's On
+					div#user-image(class='glyphicon glyphicon-user')
+				#usersActive(class='well')
+		.controls(class='form-inline pull-left')
 			div(class='form-group')
 				input#field(class='form-control')
 			input#send(type='button', value='Send', class='btn btn-primary')

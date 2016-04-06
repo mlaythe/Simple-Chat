@@ -1,26 +1,41 @@
 #content {
-  width: 500px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   overflow-y: scroll;
-  margin:0 auto;
+  margin: 0 auto;
+}
+
+#usersActive {
+  margin: 0 0 0 20px;
+  height: 100px;
+  overflow-y: scroll;
 }
 
 #title {
-  font-family:monospace;
-  font-weight:bold;
+  font-family: monospace;
+  font-weight: bold;
   font-size: 3em;
   text-align: center;
 }
 
+#user-list {
+  padding-left: 15px;
+}
+
+
+#user-image {
+  padding-left: 10px;
+}
+
 .controls {
   text-align: center;
-  margin-top:30px;
+  margin-top: 30px;
 }
 
 #field {
-  width:350px;
+  width: 350px;
 }
 
 #send {
-
+  margin-left: 5px;
 }

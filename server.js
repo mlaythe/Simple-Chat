@@ -17,6 +17,10 @@ var io = require('socket.io').listen(app.listen(port, function(){
 }));
 
 io.sockets.on('connection', function(socket){
+    socket.on('users', function(data){
+        socket.emit('name', data);
+        socket.broadcast.emit('name', data);
+    });
     socket.emit('message', {message: 'Welcome to the chat'});
     socket.on('send', function(data){
         io.sockets.emit('message', data);
